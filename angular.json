@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "test-cicd-heroku-app"
+    }
+  },
+  "defaultProject": "test-cicd-heroku-app",
+  "cli": {
+    "analytics": false
+  }
 }
