@@ -1,13 +1,11 @@
-const express = require('express');
-const path = require('path');
- 
-const app = express();
-//  comment
-app.use(express.static(__dirname + '/test-cicd-heroku-app'));
- 
-app.get('/*', function(req,res) {
- 
-res.sendFile(path.join(__dirname+'/test-cicd-heroku-app/index.html'));
-});
- 
-app.listen(process.env.PORT || 8080);
+const http = require('http'); //this is required to create an http server
+const app = require('./app'); //this defines which app to run
+
+// defining the port on which the server will run
+const port = process.env.PORT || 3000;  
+
+//creating the server to run on app
+const server = http.createServer(app);
+
+//listening the server on the defined port
+server.listen(port);
